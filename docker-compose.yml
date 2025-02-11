@@ -119,6 +119,8 @@ services:
           }
         ]
       SCANNER_DEVICES: "[]"
+    volumes:
+      - ./data/options.json:/data/options.json
     depends_on:
       - mqtt
     labels:
