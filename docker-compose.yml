@@ -3,7 +3,7 @@ version: '3.8'
 services:
   smartbed-mqtt:
     container_name: smartbed-mqtt
-    image: richardhopton/smartbed-mqtt:1.1.22
+    image: dasutin/smartbed-mqtt:1.1.23
     restart: unless-stopped
     network_mode: "host"
     environment:
