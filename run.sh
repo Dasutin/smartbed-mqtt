@@ -5,7 +5,7 @@ export MQTTPORT=$(bashio::config "mqtt_port")
 export MQTTUSER=$(bashio::config "mqtt_user")
 export MQTTPASSWORD=$(bashio::config "mqtt_password")
 
-if [ $MQTTHOST = '<auto_detect>' ]; then
+if [ $MQTTHOST = '192.168.1.30' ]; then
     if bashio::services.available 'mqtt'; then
         MQTTHOST=$(bashio::services mqtt "host")
 	if [ $MQTTHOST = 'localhost' ] || [ $MQTTHOST = '127.0.0.1' ]; then
@@ -23,7 +23,7 @@ else
     echo "Using configured MQTT Host: ${MQTTHOST}"
 fi
 
-if [ $MQTTPORT = '<auto_detect>' ]; then
+if [ $MQTTPORT = '1883' ]; then
     if bashio::services.available 'mqtt'; then
         MQTTPORT=$(bashio::services mqtt "port")
         echo "Using discovered MQTT Port: ${MQTTPORT}"
