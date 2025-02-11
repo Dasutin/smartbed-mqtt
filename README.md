@@ -2,6 +2,8 @@
 
 This project aims to enable remote control of adjustable smart beds from HomeAssistant.
 
+This is forked from Richard Hopton's smartbed-mqtt HASS Add-on project https://github.com/richardhopton/smartbed-mqtt. The goal for this fork is to make it a standalone docker container for instances where HASS isn't used, i.e. Dockerized Home Assistant. Please do not bother the original creator if this fork is not working for you.
+
 ## Support is for:
 
 ### Cloud based
@@ -30,13 +32,10 @@ This project aims to enable remote control of adjustable smart beds from HomeAss
 
 # Installation
 
-- In HomeAssistant click Settings, Add-ons, and Add-on Store.
-- Click the 3 dot menu in the top right and select Repositories.
-- Paste https://github.com/richardhopton/smartbed-mqtt, click Add, and Close
-- Select the Smartbed MQTT add-on from the list, and click Install.
-- Wait patiently for the build to finish.
-- Click on Configuration and set type followed by the necessary configuration as described below.
-- Click on Info and click Start.
+- Create a volume locally and call it "smartbed-mqtt"
+- Create another folder inside called "data"
+- Make a copy of the `options.json` file from this repository and place it in the folder `data`.
+- Edit `options.json` to with the appropriate settings based on your MQTT broker and bed.
 
 ## MQTT broker
 
@@ -324,7 +323,3 @@ You must specify at least one bleProxy as demonstrated in the config defaults. Y
 This remains connected to the bed controller and due to the bed only accepting one connection it will stop you from using the app to control the bed.
 
 Initial prototyping was only possible due to assistance from Murp on Discord.
-
-# Support
-
-For help with setup, or for sharing feedback please join the Discord server https://discord.gg/Hf3kpFjbZs
